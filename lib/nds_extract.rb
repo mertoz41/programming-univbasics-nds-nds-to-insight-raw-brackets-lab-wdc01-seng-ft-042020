@@ -2,6 +2,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 require 'pry'
 pp directors_database
+
  def directors_totals(nds)
 hash = {}
 total = 0 
@@ -9,10 +10,9 @@ row_index = 0
 while row_index < directors_database.length do 
   puts director_name = directors_database[row_index][:name]
   directors_movies = directors_database[row_index][:movies]
+  binding.pry 
   column_index = 0 
-
   while column_index < directors_movies.length do 
-   
     total += directors_movies[column_index][:worldwide_gross]
     column_index += 1 
   end 
